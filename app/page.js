@@ -15,7 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/todos")
+    fetch("https://todonext1500.netlify.app/api/todos")
       .then((res) => res.json())
       .then((data) => {
         setTodos(data)
@@ -30,7 +30,7 @@ export default function Home() {
 
   async function addTodo() {
     if (!newTodo.trim()) return
-    const res = await fetch("http://localhost:3000/api/todos", {
+    const res = await fetch("https://todonext1500.netlify.app/api/todos", {
       method: "POST",
       body: JSON.stringify({ text: newTodo }),
       headers: {
@@ -43,7 +43,7 @@ export default function Home() {
   }
 
   async function deleteTodo(id) {
-    const res = await fetch("http://localhost:3000/api/todos", {
+    const res = await fetch("https://todonext1500.netlify.app/api/todos", {
       method: "DELETE",
       body: JSON.stringify({ id }),
       headers: {
@@ -62,7 +62,7 @@ export default function Home() {
   }
 
   async function updateTodo() {
-    const res = await fetch("http://localhost:3000/api/todos", {
+    const res = await fetch("https://todonext1500.netlify.app/api/todos", {
       method: "PUT",
       body: JSON.stringify({ id: edit._id, text: edit.text, check: edit.check }),
       headers: {
@@ -78,7 +78,7 @@ export default function Home() {
   }
 
   async function checkTodo(todo) {
-    const res = await fetch("http://localhost:3000/api/todos", {
+    const res = await fetch("https://todonext1500.netlify.app/api/todos", {
       method: "PUT",
       body: JSON.stringify({...todo, id: todo._id, check: !todo.check }),
       headers: {

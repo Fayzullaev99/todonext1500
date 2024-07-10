@@ -1,0 +1,125 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 65px;
+    margin-bottom: 25px;
+
+    &__left,
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__title {
+        color: rgb(78, 168, 222);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+    }
+
+    &__number {
+        color: rgb(217, 217, 217);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        border-radius: 999px;
+        background: rgb(51, 51, 51);
+        padding: 2px 8px;
+    }
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border: 1px solid rgb(51, 51, 51);
+        border-radius: 8px;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+        background: rgb(38, 38, 38);
+        padding: 16px;
+        gap: 20px;
+    }
+
+    &__button {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__text {
+        color: rgb(242, 242, 242);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+
+    &__text_active {
+        color: rgb(128, 128, 128);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+        text-decoration-line: line-through;
+    }
+
+    & button {
+        border: none;
+        background: rgb(38, 38, 38);
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.empty {
+    border-top: 1px solid rgb(51, 51, 51);
+    border-radius: 8px;
+    padding: 64px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+
+    &__info {
+        color: rgb(128, 128, 128);
+        font-size: 16px;
+        line-height: 140%;
+    }
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+    &__spinner {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background:
+            radial-gradient(farthest-side, rgb(78, 168, 222) 94%, #0000) top/8px 8px no-repeat,
+            conic-gradient(#0000 30%, rgb(78, 168, 222));
+        -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+        animation: l13 1s infinite linear;
+    }
+}
+
+@keyframes l13 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
